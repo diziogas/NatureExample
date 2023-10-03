@@ -65,12 +65,17 @@ public class FavouriteScript : MonoBehaviour
 
 
 
-
-
-
-
-
-
+    private bool IsTileInAnyWaterBody(int x, int y)
+        {
+            foreach (List<TileIndex> waterBody in WaterBodies)
+            {
+                if (waterBody.Any(tile => tile.X == x && tile.Y == y))
+                {
+                    return true;
+                }
+            }
+            return false;
+     }
 
 
     // Start is called before the first frame update
